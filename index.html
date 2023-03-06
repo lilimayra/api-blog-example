@@ -1,12 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ejercicio de Blog</title>
+    <title>Blog API</title>
+    <!--CSS-->
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <!--JavaScript-->
+    <script defer src="./js/bootstrap.bundle.min.js"></script>
+    <script defer src="./js/main.js"></script>
   </head>
   <body>
-    <h1>Hola</h1>
+    <div class="container">
+      <h1 class="my-5 text-center">Blog</h1>
+      <!--Listado de articulos-->
+      <div
+        id="listado-articulos"
+        class="row row-cols-1 row-cols-md-3 g-4"
+      ></div>
+      <!--Marcador para paginador infinito-->
+      <div id="marcador" style="min-height: 1px"></div>
+    </div>
+    <!--Plantillas-->
+    <!--|Card de cada articulo del listado|-->
+    <template id="previa-articulo">
+      <div class="col">
+        <div class="card border-warning h-100">
+          <div class="card-body">
+            <h5 class="card-title" id="titulo"></h5>
+            <p class="card-text" id="resumen"></p>
+          </div>
+        </div>
+      </div>
+    </template>
+    <!--| Loading |-->
+    <template id="loading">
+      <div
+        class="d-flex justify-content-center align-items-center w-100"
+        style="height: 40rem"
+      >
+        <div class="spinner-border text-warning" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    </template>
   </body>
 </html>
